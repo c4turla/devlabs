@@ -21,7 +21,6 @@ class AuthController extends Controller
             'email' => 'required|unique:tb_user',
             'password' => 'required',
             'nomor_hp' => 'required',
-            'terms' => 'required|accepted',
         ]);
 
         $user = new User([

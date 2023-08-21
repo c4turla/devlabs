@@ -64,16 +64,19 @@
                             @foreach ($materis as $materi)
                             <tr>
                                 <th scope="row">{{ $startingNumber++ }}</th>
-                                <td><a href="">{{ $materi->judul }}</a></td>
+                                <td><a href="{{ route('admin.lihatmateri',$materi->id) }}">{{ $materi->judul }}</a></td>
                                 <td>{{ $materi->kelasid->description }}</td>
                                 <td>{{ Str::limit(strip_tags($materi->isi), 30) }}</td>
                                 <td>
-                                    
-                                    <form action="{{ route('admin.deletekelas', $materi->id) }}" method="POST" class="d-inline">
-                                        <a href="{{ route('admin.editkelas',$materi->id) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                    <form action="{{ route('admin.hapusmateri', $materi->id) }}" method="POST"
+                                        class="d-inline">
+                                        <a href="{{ route('admin.editmateri',$materi->id) }}"
+                                            class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Edit</a>
                                         @csrf
                                         <input name="_method" type="hidden" value="DELETE">
-                                        <button type="submit" class="btn btn-danger btn-sm swal-confirm" data-confirm-text="Apakah Anda yakin ingin menghapus data ini?"><i class="fas fa-trash"></i>
+                                        <button type="submit" class="btn btn-danger btn-sm swal-confirm"
+                                            data-confirm-text="Apakah Anda yakin ingin menghapus data ini?"><i
+                                                class="fas fa-trash"></i>
                                             Hapus</button>
                                     </form>
                                 </td>
@@ -81,7 +84,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <br/>
+                    <br />
                     <nav aria-label="...">
                         <ul class="pagination pagination-sm mb-0">
                             <li class="page-item">
@@ -97,7 +100,7 @@
 </div>
 
 <script type="text/javascript">
-$(document).ready(function () {
+    $(document).ready(function () {
         $('.swal-confirm').click(function (e) {
             e.preventDefault();
             var form = this.closest('form');

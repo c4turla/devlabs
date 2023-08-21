@@ -10,7 +10,7 @@
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="{{ route('admin.materi') }}">Materi</a></li>
-                    <li class="breadcrumb-item active">Tambah Materi</li>
+                    <li class="breadcrumb-item active">Edit Materi</li>
                 </ol>
             </div>
 
@@ -23,17 +23,17 @@
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h4 class="card-title">Tambah Materi</h4>
-                <p class="card-title-desc">Form ini digunakan untuk <code>Tambah Materi</code>.</p>
+                <h4 class="card-title">Edit Materi</h4>
+                <p class="card-title-desc">Form ini digunakan untuk <code>Edit Materi</code>.</p>
             </div>
-            <form action="{{ route('admin.savemateri') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.updatemateri', $materi) }}" method="POST" enctype="multipart/form-data">
+                @method('patch')
                 @csrf
                 <div class="card-body">
                     <div class="mb-3 row">
                         <label for="judul" class="col-md-2 col-form-label">Judul</label>
                         <div class="col-md-6">
-                            <input class="form-control" type="text" value="" id="judul" name="judul">
-                            <input type="hidden" name="penulis" value="{{Auth::user()->name}}">
+                            <input class="form-control" type="text" value="{{ $materi->judul }}" id="judul" name="judul">
                             @if ($errors->has('judul'))
                             <span class="text-danger">{{ $errors->first('judul') }}</span>
                             @endif
@@ -45,8 +45,10 @@
                         <div class="col-md-4">
                             <select class="form-select" name="kelas" id="kelas">
                                 <option value="">Pilih Kelas</option>
-                                @foreach ($kelass as $kelas)
-                                <option value="{{ $kelas->id }}">{{ $kelas->description }}</option>
+                                @foreach ($kelas as $kelas)
+                                <option value="{{ $kelas->id }}" {{ $materi->kelas == $kelas->id ? 'selected' : '' }}>
+                                    {{ $kelas->description }}
+                                </option>
                                 @endforeach
                             </select>
                         </div>
@@ -54,7 +56,7 @@
                     <div class="mb-3 row">
                         <label for="example-email-input" class="col-md-2 col-form-label">Isi Materi</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" id="my-editor" name="isi"></textarea>
+                            <textarea class="form-control" id="my-editor" name="isi">{{ $materi->isi }}</textarea>
                         </div>
                     </div>
                     <div class="card-footer">

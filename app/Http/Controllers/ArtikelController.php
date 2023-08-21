@@ -48,6 +48,43 @@ class ArtikelController extends Controller
         return redirect()->route('admin.artikel')->with('success', 'Artikel berhasil ditambahkan.');
     }
 
+    public function edit(Artikel $artikel)
+    {
+        $kategori = KategoriArtikel::all();
+        return view('admin.artikel.edit',compact('artikel', 'kategori'));
+    }
+
+    public function update(Artikel $artikel, Request $request)
+    {
+        $request->validate([
+            'judul' => 'required',
+            'kategori_id' => 'required',
+            'gambar' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+            'deskripsi' => 'required',
+        ]);
+
+        // Mendapatkan path gambar lama
+        $gambarPath = $artikel->gambar;
+
+        if ($request->hasFile('gambar')) {
+            // Menghapus gambar lama jika ada
+            if ($artikel->gambar) {
+                Storage::delete('public/' . $artikel->gambar);
+            }
+
+            // Mengupload gambar baru
+            $gambarPath = $request->file('gambar')->store('assets/images/artikel', 'public');
+        }
+
+        $artikel->update([
+            'judul' => $request->judul,
+            'kategori_id' => $request->kategori_id,
+            'gambar' => $gambarPath,
+            'deskripsi' => $request->deskripsi,
+        ]);
+        return redirect()->route('admin.artikel')->with('success', 'Artikel Berhasil diupdate');
+    }
+
     public function destroy($id)
     {
         $artikel = Artikel::findOrFail($id);

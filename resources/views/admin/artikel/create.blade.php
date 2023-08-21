@@ -72,7 +72,7 @@
                     <div class="mb-3 row">
                         <label for="example-email-input" class="col-md-2 col-form-label">Isi Artikel</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" id="ckeditor-classic" name="deskripsi"></textarea>
+                            <textarea class="form-control" id="my-editor" name="deskripsi"></textarea>
                         </div>
                     </div>
                     <div class="card-footer">
@@ -85,30 +85,29 @@
             <div class="modal fade" id="kategoriModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog">
-                    <div class="modal-content">                        
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Tambah Kategori Artikel</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form action="{{ route('admin.simpankategori') }}" method="POST">
-                                    @csrf
-                                    <div class="mb-3">
-                                        <label for="recipient-name" class="col-form-label">Nama Kategori:</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label for="message-text" class="col-form-label">Deskripsi:</label>
-                                        <textarea class="form-control" id="description" name="description"></textarea>
-                                    </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
-                                        class="bx bx-block me-1"></i> Tutup</button>
-                                <button class="btn btn-primary" type="submit"><i
-                                        class="bx bx-plus me-1"></i> Tambah</button>
-                            </div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Tambah Kategori Artikel</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ route('admin.simpankategori') }}" method="POST">
+                                @csrf
+                                <div class="mb-3">
+                                    <label for="recipient-name" class="col-form-label">Nama Kategori:</label>
+                                    <input type="text" class="form-control" id="name" name="name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message-text" class="col-form-label">Deskripsi:</label>
+                                    <textarea class="form-control" id="description" name="description"></textarea>
+                                </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i
+                                    class="bx bx-block me-1"></i> Tutup</button>
+                            <button class="btn btn-primary" type="submit"><i class="bx bx-plus me-1"></i>
+                                Tambah</button>
+                        </div>
                         </form>
                     </div>
                 </div>
@@ -117,10 +116,17 @@
     </div> <!-- end col -->
 </div>
 <!-- end row -->
+<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 
-<!-- ckeditor -->
-<script src="{!! url('assets/libs/@ckeditor/ckeditor5-build-classic/build/ckeditor.js') !!}"></script>
-<!-- init js -->
-<script src="{!! url('assets/js/pages/form-editor.init.js') !!}"></script>
-<script src="{!! url('assets/js/pages/form-validation.init.js') !!}"></script>
+<script>
+    var options = {
+      filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+      filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+      filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+      filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token='
+    };
+</script>
+<script>
+    CKEDITOR.replace('my-editor', options);
+</script>
 @endsection

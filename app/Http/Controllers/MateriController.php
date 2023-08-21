@@ -36,4 +36,39 @@ class MateriController extends Controller
         ]);
         return redirect()->route('admin.materi')->with('success', 'Materi berhasil ditambahkan.');
     }
+
+    public function show(Materi $materi)
+    {
+        $kelas = Kelas::all();
+        return view('admin.materi.show',compact('materi', 'kelas'));
+    }
+
+    public function edit(Materi $materi)
+    {
+        $kelas = Kelas::all();
+        return view('admin.materi.edit',compact('materi', 'kelas'));
+    }
+
+    public function update(Materi $materi, Request $request)
+    {
+        $request->validate([
+            'judul' => 'required',
+            'kelas' => 'required',
+            'isi' => 'required', 
+        ]);
+
+        $materi->update([
+            'judul' => $request->judul,
+            'kelas' => $request->kelas,
+            'isi' => $request->isi,
+        ]);
+        return redirect()->route('admin.materi')->with('success', 'Materi Berhasil diupdate');
+    }
+
+    public function destroy(Materi $materi)
+    {
+        $materi->delete();
+        return redirect()->route('admin.materi')->with('success', 'Materi Berhasil dihapus');
+    }
+
 }

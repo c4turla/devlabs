@@ -70,7 +70,7 @@
                                 <td><img src="{{ asset('storage/' . $artikel->gambar) }}" alt="Gambar"
                                         class="rounded-4 avatar-xl" height="80"></td>
                                 <td>
-                                    <a href="" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="{{ route('admin.editartikel',$artikel->id) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Edit</a>
                                     <form action="{{ route('admin.hapusartikel', $artikel->id) }}" method="POST"
                                         class="d-inline">
                                         @csrf
