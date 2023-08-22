@@ -14,7 +14,7 @@ class ArtikelController extends Controller
     //
     public function index()
     {
-        $artikels = Artikel::orderBy('created_at', 'desc')->paginate(5);
+        $artikels = Artikel::orderBy('created_at', 'desc')->paginate(10);
         return view('admin.artikel.index', compact('artikels'));
     }
 
@@ -46,6 +46,12 @@ class ArtikelController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
         return redirect()->route('admin.artikel')->with('success', 'Artikel berhasil ditambahkan.');
+    }
+
+    public function show(Artikel $artikel)
+    {
+        $kategori = KategoriArtikel::all();
+        return view('admin.artikel.show',compact('artikel', 'kategori'));
     }
 
     public function edit(Artikel $artikel)

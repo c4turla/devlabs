@@ -89,6 +89,32 @@
 
         <script src="{!! url('assets/js/app.js') !!}"></script>
 
+        <script>
+            // Mengambil elemen tombol konfirmasi berdasarkan id
+            const confirmButton = document.getElementById('confirm');
+        
+            if (confirmButton) {
+                // Menambahkan event listener untuk klik pada tombol konfirmasi
+                confirmButton.addEventListener('click', function() {
+                    Swal.fire({
+                        title: 'Konfirmasi Logout',
+                        text: 'Apakah Anda yakin ingin logout?',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Logout',
+                        cancelButtonText: 'Batal'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            // Lakukan aksi logout di sini, misalnya mengarahkan ke route logout
+                            window.location.href = "{{ route('logout') }}"; // Ganti dengan route yang sesuai
+                        }
+                    });
+                });
+            }
+        </script>
+
 </body>
 
 </html>

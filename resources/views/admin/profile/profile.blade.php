@@ -1,7 +1,21 @@
 @extends('partials.layout')
 
 @section('content')
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box d-flex align-items-center justify-content-between">
+            <h4 class="mb-0">Pengguna</h4>
 
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Pengguna</a></li>
+                    <li class="breadcrumb-item active">Profil</li>
+                </ol>
+            </div>
+
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-xl-12 col-lg-12">
         <div class="card">
@@ -11,7 +25,7 @@
                         <div class="d-flex align-items-start mt-3 mt-sm-0">
                             <div class="flex-shrink-0">
                                 <div class="avatar-xl me-3">
-                                    <img src="" alt="" class="img-fluid rounded-circle d-block">
+                                    <img src="{{"assets/images/users/avatar-10.jpg"}}" class="rounded-3 avatar-xl" alt="">
                                 </div>
                             </div>
                             <div class="flex-grow-1">

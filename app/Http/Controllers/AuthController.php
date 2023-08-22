@@ -49,12 +49,11 @@ class AuthController extends Controller
             $user = Auth::user();
             if ($user->level === 'admin') {
                 // Redirect ke halaman admin
-                return redirect()->route('admin.dashboard');
+                return redirect()->route('admin.dashboard')->with('success', 'Selamat Anda Berhasil Login');
             } else {
                 // Redirect ke halaman user biasa
-                return redirect()->route('siswa.dashboard');
+                return redirect()->route('siswa.dashboard')->with('success', 'Selamat Anda Berhasil Login');
             }
-           // return redirect()->intended('/admin/dashboard');
         }
 
         return back()->withErrors([

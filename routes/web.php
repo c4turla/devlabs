@@ -23,6 +23,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('/contact', 'HomeController@contact')->name('home.contact');
         Route::get('/course', 'HomeController@category')->name('home.course');
         Route::get('/blog', 'HomeController@blog')->name('home.blog');
+        Route::get('artikel/{artikel}/detail', 'HomeController@showartikel')->name('home.blogshow');
+        Route::get('privacy', 'HomeController@privacy')->name('home.privacy');
         Route::get('register', 'AuthController@register')->name('auth.register');
         Route::post('registeraction', 'AuthController@registeraction')->name('registeraction');
         Route::get('login', 'AuthController@login')->name('auth.login');
@@ -58,12 +60,13 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('admin/artikel', 'ArtikelController@index')->name('admin.artikel');
         Route::get('admin/tambahartikel', 'ArtikelController@addartikel')->name('admin.tambahartikel');
         Route::post('admin/storeartikel', 'ArtikelController@storeartikel')->name('admin.simpanartikel');
+        Route::get('admin/{artikel}/lihatartikel', 'ArtikelController@show')->name('admin.lihatartikel');
         Route::get('admin/{artikel}/editartikel', 'ArtikelController@edit')->name('admin.editartikel');
         Route::patch('admin/{artikel}/updateartikel', 'ArtikelController@update')->name('admin.updateartikel');
         Route::post('admin/storekategori', 'ArtikelController@storekategori')->name('admin.simpankategori');
         Route::delete('admin/{post}/delartikel', 'ArtikelController@destroy')->name('admin.hapusartikel');
-        Route::get('siswa/dashboard', 'DashboardController@siswa')->name('siswa.dashboard');
         //Siswa
+        Route::get('siswa/dashboard', 'DashboardController@siswa')->name('siswa.dashboard');
         Route::get('siswa/profile', 'DashboardController@siswaprofile')->name('siswa.profile');
         Route::get('siswa/course', 'DashboardController@course')->name('siswa.course');
         Route::get('profile', 'DashboardController@profile')->name('profile');

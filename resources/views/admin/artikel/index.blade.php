@@ -1,6 +1,7 @@
 @extends('partials.layout')
 
 @section('content')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <!-- start page title -->
 <div class="row">
     <div class="col-12">
@@ -64,7 +65,7 @@
                             @foreach ($artikels as $artikel)
                             <tr>
                                 <th scope="row">{{ $startingNumber++ }}</th>
-                                <td><a href="">{{ $artikel->judul }}</a></td>
+                                <td><a href="{{ route('admin.lihatartikel',$artikel->id) }}">{{ $artikel->judul }}</a></td>
                                 <td>{{ $artikel->kategori->name }}</td>
                                 <td>{{ Str::limit(strip_tags($artikel->deskripsi), 50) }}</td>
                                 <td><img src="{{ asset('storage/' . $artikel->gambar) }}" alt="Gambar"
@@ -75,7 +76,7 @@
                                         class="d-inline">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm show-alert-delete-box"><i class="fas fa-trash"></i>
+                                        <button type="submit" class="btn btn-danger btn-sm swal-confirm" data-confirm-text="Apakah Anda yakin ingin menghapus data ini?"><i class="fas fa-trash"></i>
                                             Hapus</button>
                                     </form>
                                 </td>
@@ -99,24 +100,24 @@
 </div>
 
 <script type="text/javascript">
-    $('.show-alert-delete-box').click(function(event){
-        var form =  $(this).closest("form");
-        var name = $(this).data("name");
-        event.preventDefault();
-        swal({
-            title: "Konfirmasi",
-            text: "Apakah anda yakin akan menghapus data ini?",
-            icon: "warning",
-            type: "warning",
-            buttons: ["Cancel","Yes!"],
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Ya, Hapus Data!'
-        }).then((willDelete) => {
-            if (willDelete) {
-                form.submit();
-            }
+    $(document).ready(function () {
+            $('.swal-confirm').click(function (e) {
+                e.preventDefault();
+                var form = this.closest('form');
+                Swal.fire({
+                    title: $(this).data('confirm-text') || 'Apakah Anda yakin?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Ya, Hapus!',
+                    cancelButtonText: 'Batal'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        form.submit();
+                    }
+                });
+            });
         });
-    });
-</script>
+    </script>
 @endsection

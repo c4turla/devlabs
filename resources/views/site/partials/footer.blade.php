@@ -4,8 +4,8 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
-                    <img src={{"site/img/logo.png"}} height="80">
-                    <img src={{"site/img/merdeka.png"}} width="180">
+                    <img src={!! url('site/img/logo.png') !!} height="80">
+                    <img src={!! url('site/img/merdeka.png') !!} width="180">
                     <h4 class="text-white mb-2 mt-2">Devlabs</h4>
                     <p>DevLabs merupakan sebuah platform belajar kimia secara online.</p>
 
@@ -26,22 +26,22 @@
                     <h4 class="text-white mb-3">Gallery</h4>
                     <div class="row g-2 pt-2">
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src={{"site/img/atom.jpg"}} alt="">
+                            <img class="img-fluid bg-light p-1" src={!! url('site/img/atom.jpg') !!} alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src={{"site/img/larutan.jpg"}} alt="">
+                            <img class="img-fluid bg-light p-1" src={!! url('site/img/larutan.jpg') !!} alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src={{"site/img/course-3.jpg"}} alt="">
+                            <img class="img-fluid bg-light p-1" src={!! url('site/img/course-3.jpg') !!} alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src={{"site/img/course-2.jpg"}} alt="">
+                            <img class="img-fluid bg-light p-1" src={!! url('site/img/course-2.jpg') !!} alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src={{"site/img/logam.jpg"}} alt="">
+                            <img class="img-fluid bg-light p-1" src={!! url('site/img/logam.jpg') !!} alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src={{"site/img/course-1.jpg"}} alt="">
+                            <img class="img-fluid bg-light p-1" src={!! url('site/img/course-1.jpg') !!} alt="">
                         </div>
                     </div>
                 </div>
@@ -65,7 +65,7 @@
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
                             <a href="">Home</a>
-                            <a href="">Cookies</a>
+                            <a href="{{ route('home.privacy') }}">Privacy</a>
                             <a href="">Help</a>
                             <a href="">FAQ</a>
                         </div>
