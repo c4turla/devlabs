@@ -25,7 +25,11 @@
                         <div class="d-flex align-items-start mt-3 mt-sm-0">
                             <div class="flex-shrink-0">
                                 <div class="avatar-xl me-3">
-                                    <img src="{{"assets/images/users/avatar-10.jpg"}}" class="rounded-3 avatar-xl" alt="">
+                                    @if(Auth::user()->photo)
+                                    <img class="rounded-3 avatar-xl" alt="" src="{{ asset('storage/' . Auth::user()->photo) }}">
+                                    @else
+                                    <img class="rounded-3 avatar-xl" alt="" src="{!! url('assets/images/users/noimage.png') !!}">
+                                    @endif 
                                 </div>
                             </div>
                             <div class="flex-grow-1">

@@ -8,7 +8,8 @@
                         <img src="{!! url('site/img/logo.png') !!}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{!! url('site/img/logo.png') !!}" alt="" height="22"> <span class="logo-txt">DevLabs</span>
+                        <img src="{!! url('site/img/logo.png') !!}" alt="" height="22"> <span
+                            class="logo-txt">DevLabs</span>
                     </span>
                 </a>
 
@@ -17,10 +18,11 @@
                         <img src="{!! url('site/img/logo.png') !!}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{!! url('site/img/logo.png') !!}" alt="" height="22"> <span class="logo-txt">DevLabs</span>
+                        <img src="{!! url('site/img/logo.png') !!}" alt="" height="22"> <span
+                            class="logo-txt">DevLabs</span>
                     </span>
                 </a>
-    
+
             </div>
 
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item vertical-menu-btn">
@@ -39,15 +41,16 @@
 
         <div class="d-flex">
             <div class="dropdown d-inline-block d-lg-none">
-                <button type="button" class="btn header-item"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <button type="button" class="btn header-item" data-bs-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
                     <i class="icon-sm" data-feather="search"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0">
                     <form class="p-2">
                         <div class="search-box">
                             <div class="position-relative">
-                                <input type="text" class="form-control rounded bg-light border-0" placeholder="Search...">
+                                <input type="text" class="form-control rounded bg-light border-0"
+                                    placeholder="Search...">
                                 <i class="mdi mdi-magnify search-icon"></i>
                             </div>
                         </div>
@@ -58,10 +61,10 @@
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon" id="page-header-notifications-dropdown"
-                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="icon-sm" data-feather="bell"></i>
-                <span class="noti-dot bg-danger rounded-pill">3</span>
-            </button>
+                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="icon-sm" data-feather="bell"></i>
+                    <span class="noti-dot bg-danger rounded-pill">3</span>
+                </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-notifications-dropdown">
                     <div class="p-3">
@@ -79,14 +82,16 @@
                         <a href="" class="text-reset notification-item">
                             <div class="d-flex border-bottom align-items-start">
                                 <div class="flex-shrink-0">
-                                    <img src="assets/images/users/avatar-3.jpg"
-                                    class="me-3 rounded-circle avatar-sm" alt="user-pic">
+                                    <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-sm"
+                                        alt="user-pic">
                                 </div>
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1">Justin Verduzco</h6>
                                     <div class="text-muted">
-                                        <p class="mb-1 font-size-13">Your task changed an issue from "In Progress" to <span class="badge text-success bg-success-subtle">Review</span></p>
-                                        <p class="mb-0 font-size-10 text-uppercase fw-bold"><i class="mdi mdi-clock-outline"></i> 1 hour ago</p>
+                                        <p class="mb-1 font-size-13">Your task changed an issue from "In Progress" to
+                                            <span class="badge text-success bg-success-subtle">Review</span></p>
+                                        <p class="mb-0 font-size-10 text-uppercase fw-bold"><i
+                                                class="mdi mdi-clock-outline"></i> 1 hour ago</p>
                                     </div>
                                 </div>
                             </div>
@@ -103,8 +108,10 @@
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1">New order has been placed</h6>
                                     <div class="text-muted">
-                                        <p class="mb-1 font-size-13">Open the order confirmation or shipment confirmation.</p>
-                                        <p class="mb-0 font-size-10 text-uppercase fw-bold"><i class="mdi mdi-clock-outline"></i> 5 hours ago</p>
+                                        <p class="mb-1 font-size-13">Open the order confirmation or shipment
+                                            confirmation.</p>
+                                        <p class="mb-0 font-size-10 text-uppercase fw-bold"><i
+                                                class="mdi mdi-clock-outline"></i> 5 hours ago</p>
                                     </div>
                                 </div>
                             </div>
@@ -114,7 +121,8 @@
                             <div class="d-flex border-bottom align-items-start">
                                 <div class="flex-shrink-0">
                                     <div class="avatar-sm me-3">
-                                        <span class="avatar-title bg-success-subtle text-success rounded-circle font-size-16">
+                                        <span
+                                            class="avatar-title bg-success-subtle text-success rounded-circle font-size-16">
                                             <i class="bx bx-cart"></i>
                                         </span>
                                     </div>
@@ -122,8 +130,10 @@
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1">Your item is shipped</h6>
                                     <div class="text-muted">
-                                        <p class="mb-1 font-size-13">Here is somthing that you might light like to know.</p>
-                                        <p class="mb-0 font-size-10 text-uppercase fw-bold"><i class="mdi mdi-clock-outline"></i> 1 day ago</p>
+                                        <p class="mb-1 font-size-13">Here is somthing that you might light like to know.
+                                        </p>
+                                        <p class="mb-0 font-size-10 text-uppercase fw-bold"><i
+                                                class="mdi mdi-clock-outline"></i> 1 day ago</p>
                                     </div>
                                 </div>
                             </div>
@@ -132,14 +142,15 @@
                         <a href="" class="text-reset notification-item">
                             <div class="d-flex border-bottom align-items-start">
                                 <div class="flex-shrink-0">
-                                    <img src="assets/images/users/avatar-4.jpg"
-                                        class="me-3 rounded-circle avatar-sm" alt="user-pic">
+                                    <img src="assets/images/users/avatar-4.jpg" class="me-3 rounded-circle avatar-sm"
+                                        alt="user-pic">
                                 </div>
                                 <div class="flex-grow-1">
                                     <h6 class="mb-1">Salena Layfield</h6>
                                     <div class="text-muted">
                                         <p class="mb-1 font-size-13">Yay ! Everything worked!</p>
-                                        <p class="mb-0 font-size-10 text-uppercase fw-bold"><i class="mdi mdi-clock-outline"></i> 3 days ago</p>
+                                        <p class="mb-0 font-size-10 text-uppercase fw-bold"><i
+                                                class="mdi mdi-clock-outline"></i> 3 days ago</p>
                                     </div>
                                 </div>
                             </div>
@@ -155,15 +166,28 @@
 
 
             <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item user text-start d-flex align-items-center" id="page-header-user-dropdown"
-                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{!! url('assets/images/users/avatar-1.jpg') !!}" alt="Header Avatar">
+                <button type="button" class="btn header-item user text-start d-flex align-items-center"
+                    id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    @if(Auth::user()->photo)
+                    <img class="rounded-circle header-profile-user" src="{{ asset('storage/' . Auth::user()->photo) }}"
+                        alt="Header Avatar">
+                    @else
+                    <img class="rounded-circle header-profile-user" src="{!! url('assets/images/users/noimage.png') !!}"
+                        alt="Header Avatar">
+                    @endif
+                    
                 </button>
                 <div class="dropdown-menu dropdown-menu-end pt-0">
-                    <a class="dropdown-item" href="contacts-profile.html"><i class='bx bx-user-circle text-muted font-size-18 align-middle me-1'></i> <span class="align-middle">My Account</span></a>
-                    <a class="dropdown-item" href="pages-faqs.html"><i class='bx bx-buoy text-muted font-size-18 align-middle me-1'></i> <span class="align-middle">Support</span></a>
+                    <a class="dropdown-item" href="contacts-profile.html"><i
+                            class='bx bx-user-circle text-muted font-size-18 align-middle me-1'></i> <span
+                            class="align-middle">My Account</span></a>
+                    <a class="dropdown-item" href="pages-faqs.html"><i
+                            class='bx bx-buoy text-muted font-size-18 align-middle me-1'></i> <span
+                            class="align-middle">Support</span></a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{ route('logout') }}" ><i class='bx bx-log-out text-muted font-size-18 align-middle me-1'></i> <span class="align-middle">Logout</span></a>
+                    <a class="dropdown-item" href="{{ route('logout') }}"><i
+                            class='bx bx-log-out text-muted font-size-18 align-middle me-1'></i> <span
+                            class="align-middle">Logout</span></a>
                 </div>
             </div>
         </div>

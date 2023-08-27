@@ -53,6 +53,7 @@
 
                         <thead>
                             <tr>
+                                <th scope="col">#</th>
                                 <th>Nama Kategori</th>
                                 <th>Status</th>
                                 <th>Deskripsi</th>
@@ -62,6 +63,7 @@
                         <tbody>
                             @foreach ($kategoris as $kategori)
                             <tr>
+                                <th scope="row">{{ $loop->iteration }}</th>
                                 <td>{{ $kategori->name }}</td>
                                 <td>@if($kategori->enabled == 1)
                                     <p class="badge text-success  bg-success-subtle font-size-12">Active</p>
@@ -71,7 +73,7 @@
                                 </td>
                                 <td>{{ $kategori->description }}</td>
                                 <td>
-                                    <a href="" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                    <a href="{{ route('admin.editkategori', $kategori->id) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Edit</a>
                                     <form action="{{ route('admin.hapuskategori', $kategori->id) }}" method="POST" class="d-inline">
                                         @csrf
                                         @method('DELETE')

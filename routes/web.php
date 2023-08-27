@@ -34,9 +34,11 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
     Route::group(['middleware' => ['auth']], function() {
         Route::get('logout', 'AuthController@logout')->name('logout');
         Route::get('admin/dashboard', 'DashboardController@index')->name('admin.dashboard');
+        //Kategori
         Route::get('admin/category', 'CategoryController@index')->name('admin.category');
         Route::get('admin/tambahkategori', 'CategoryController@add')->name('admin.tambahkategori');
         Route::post('admin/storecategory', 'CategoryController@store')->name('admin.savekategori');
+        Route::get('admin/{kategori}/editkategori', 'CategoryController@edit')->name('admin.editkategori');
         Route::delete('admin/delcategory/{id}', 'CategoryController@destroy')->name('admin.hapuskategori');
         //Kelas
         Route::get('admin/kelas', 'KelasController@index')->name('admin.kelas');
@@ -65,11 +67,17 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::patch('admin/{artikel}/updateartikel', 'ArtikelController@update')->name('admin.updateartikel');
         Route::post('admin/storekategori', 'ArtikelController@storekategori')->name('admin.simpankategori');
         Route::delete('admin/{post}/delartikel', 'ArtikelController@destroy')->name('admin.hapusartikel');
+        //Kuis
+        Route::get('admin/kuis', 'KuisController@index')->name('admin.kuis');
+        Route::get('admin/{materi}/tambahkuis', 'KuisController@tambah')->name('admin.tambahkuis');
+        Route::post('admin/storekuis', 'KuisController@storekuis')->name('admin.storekuis');
+        Route::delete('admin/{kuis}/delkuis', 'KuisController@destroy')->name('admin.hapuskuis');
         //Siswa
         Route::get('siswa/dashboard', 'DashboardController@siswa')->name('siswa.dashboard');
         Route::get('siswa/profile', 'DashboardController@siswaprofile')->name('siswa.profile');
         Route::get('siswa/course', 'DashboardController@course')->name('siswa.course');
         Route::get('profile', 'DashboardController@profile')->name('profile');
+        Route::put('siswa/saveprofile', 'DashboardController@updateprofile')->name('siswa.saveprofile');
     });
 
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

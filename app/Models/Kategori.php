@@ -12,4 +12,9 @@ class Kategori extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['name', 'sort_order', 'description'];
+
+    public function kelas()
+    {
+        return $this->hasMany(Kelas::class, 'kurikulum');
+    }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Artikel;
+use App\Models\Kategori;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
 
     public function category()
     {
-        return view('site.category');
+        $kategori = Kategori::with('kelas.materi')->get();
+        return view('site.category', compact('kategori'));
     }
 
     public function privacy()

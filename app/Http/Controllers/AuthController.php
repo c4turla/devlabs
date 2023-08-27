@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Notifications\WelcomeEmailNotification;
 
 class AuthController extends Controller
 {
@@ -30,6 +31,8 @@ class AuthController extends Controller
             'nomor_hp' => $request->nomor_hp
         ]);
         $user->save();
+
+        $user->notify(new WelcomeEmailNotification);
 
         return redirect()->route('auth.login')->with('success', 'Registrasi Berhasil. Silahkan login!');
     }

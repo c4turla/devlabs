@@ -205,8 +205,13 @@
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item user text-start d-flex align-items-center" id="page-header-user-dropdown"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{!! url('assets/images/users/avatar-1.jpg') !!}"
-                    alt="Header Avatar">
+                    @if(Auth::user()->photo)
+                    <img class="rounded-circle header-profile-user" src="{{ asset('storage/' . Auth::user()->photo) }}"
+                        alt="Header Avatar">
+                    @else
+                    <img class="rounded-circle header-profile-user" src="{!! url('assets/images/users/noimage.png') !!}"
+                        alt="Header Avatar">
+                    @endif    
                 </button>
                 <div class="dropdown-menu dropdown-menu-end pt-0">
                     <a class="dropdown-item" href="{{ route('profile') }}"><i class='bx bx-user-circle text-muted font-size-18 align-middle me-1'></i> <span class="align-middle">My Account</span></a>

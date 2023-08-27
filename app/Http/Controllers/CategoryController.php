@@ -37,6 +37,11 @@ class CategoryController extends Controller
         return redirect()->route('admin.category')->with('success', 'Kategori berhasil ditambahkan.');
     }
 
+    public function edit(Kategori $kategori)
+    {
+        return view('admin.category.edit',compact('kategori'));
+    }
+
     public function destroy($id)
     {
         $artikel = Kategori::findOrFail($id);

@@ -63,20 +63,17 @@
                     <div class="card-body">
                         <div class="avatar">
                             <span class="avatar-title bg-primary-subtle rounded">
-                                <i class="mdi mdi-shopping-outline text-primary font-size-24"></i>
+                                <i class="mdi mdi-account-outline text-primary font-size-24"></i>
                             </span>
                         </div>
-                        <p class="text-muted mt-4 mb-0">Today Orders</p>
+                        <p class="text-muted mt-4 mb-0">Total Pengguna</p>
                         <h4 class="mt-1 mb-0">3,89,658 <sup class="text-success fw-medium font-size-14"><i class="mdi mdi-arrow-down"></i> 10%</sup></h4>
                         <div>
                             <div class="py-3 my-1">
                                 <div id="mini-1" data-colors='["#3980c0"]'></div>
                             </div>
                             <ul class="list-inline d-flex justify-content-between justify-content-center mb-0">
-                                <li class="list-inline-item"><a href="" class="text-muted">Day</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Week</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Month</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Year</a></li>
+                                <li class="list-inline-item"><a href="" class="text-muted">Lihat Detail</a></li>
                             </ul>
                         </div>
                     </div>

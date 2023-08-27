@@ -38,7 +38,6 @@
                             <span class="text-danger">{{ $errors->first('judul') }}</span>
                             @endif
                         </div>
-
                     </div>
                     <div class="mb-3 row">
                         <label for="example-search-input" class="col-md-2 col-form-label">Kelas</label>
@@ -49,6 +48,15 @@
                                 <option value="{{ $kelas->id }}">{{ $kelas->description }}</option>
                                 @endforeach
                             </select>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <label for="example-url-input" class="col-md-2 col-form-label">Gambar</label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="file" value="" id="gambar" name="gambar">
+                            @if ($errors->has('gambar'))
+                            <span class="text-danger">{{ $errors->first('gambar') }}</span>
+                            @endif
                         </div>
                     </div>
                     <div class="mb-3 row">

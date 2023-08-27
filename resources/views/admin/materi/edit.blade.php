@@ -54,6 +54,21 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
+                        <label for="example-url-input" class="col-md-2 col-form-label">Gambar</label>
+
+                        <div class="col-md-4">   
+                            <div class="col-md-2">
+                                <img src="{{ asset('storage/' . $materi->gambar) }}" width="100" alt="">
+                            </div>
+                            <br>                         
+                            <input class="form-control" type="file" id="gambar" name="gambar" >
+                            @if ($errors->has('gambar'))
+                            <span class="text-danger">{{ $errors->first('gambar') }}</span>
+                            @endif
+                        </div>
+
+                    </div>
+                    <div class="mb-3 row">
                         <label for="example-email-input" class="col-md-2 col-form-label">Isi Materi</label>
                         <div class="col-md-10">
                             <textarea class="form-control" id="my-editor" name="isi">{{ $materi->isi }}</textarea>

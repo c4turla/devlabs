@@ -6,12 +6,12 @@
  <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="mb-0">User Profile</h4>
+            <h4 class="mb-0">Profile Saya</h4>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
                     <li class="breadcrumb-item"><a href="javascript: void(0);">DevLabs</a></li>
-                    <li class="breadcrumb-item active">User Profile</li>
+                    <li class="breadcrumb-item active">Profil Saya</li>
                 </ol>
             </div>
 
@@ -45,12 +45,16 @@
                         <div>
                             <h5 class="font-size-16 mb-4">Detail Profile</h5>
                             <div class="card-body">
+                                <form action="{{ route('siswa.saveprofile') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
                                 <div class="mb-3 row">
                                     <label for="password" class="col-md-4 col-form-label">Photo</label>
-                                    <div class="col-md-4">
-                                        <img src="{!! url('assets/images/users/avatar-10.jpg') !!}" class="rounded-4 avatar-xl" alt="">
-                                        <br />
-                                        <input class="form-control d-inline" type="file" value="" id="photo" name="photo">
+                                    <div class="col-md-2">
+                                        <img src="{{ asset('storage/' . Auth::user()->photo) }}" class="rounded-3 avatar-xl" alt="" id="preview">
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input class="form-control d-inline" type="file" id="selectImage" name="photo">
                                     </div>        
                                 </div>
                                 <div class="mb-3 row">
@@ -78,10 +82,10 @@
                                     <div class="col-md-4">
                                         <select class="form-select" name="kelas" id="kelas">
                                             <option value="">Pilih Kelas</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="11">12</option>
-                                            <option value="Umum">Umum</option>
+                                            <option value="10" {{ Auth::user()->kelas  == 10 ? 'selected' : '' }}>10</option>
+                                            <option value="11" {{ Auth::user()->kelas  == 11 ? 'selected' : '' }}>11</option>
+                                            <option value="11" {{ Auth::user()->kelas  == 12 ? 'selected' : '' }}>12</option>
+                                            <option value="Umum" {{ Auth::user()->kelas  == "Umum" ? 'selected' : '' }}>Umum</option>
                                         </select>
                                     </div>        
                                 </div>
@@ -97,141 +101,7 @@
                                     <button class="btn btn-success" type="submit"><i class="bx bx-save me-1"></i> Simpan</button>
                                     <button class="btn btn-warning" type="reset"><i class="bx bx-reset me-1"></i> Reset</button>
                                 </div>
-                            </div>
-                        </div>
-                        <hr>
-                        <div>
-                            <h5 class="font-size-16 mb-4">History Course</h5>
-
-                            <div class="table-responsive">
-                                <table class="table table-nowrap table-hover mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Judul Course</th>
-                                            <th scope="col">Kurikulum</th>
-                                            <th scope="col">Tanggal</th>
-                                            <th scope="col" style="width: 120px;">Status</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">01</th>
-                                            <td><a href="#" class="text-dark">Brand Logo Design</a></td>
-                                            <td>
-                                                18 Jun, 2020
-                                            </td>
-                                            <td>
-                                                <span class="badge text-primary bg-primary-subtle font-size-12">Open</span>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </a>
-                                                
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Action</a>
-                                                        <a class="dropdown-item" href="#">Another action</a>
-                                                        <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">02</th>
-                                            <td><a href="#" class="text-dark">Minible Admin</a></td>
-                                            <td>
-                                                06 Jun, 2020
-                                            </td>
-                                            <td>
-                                                <span class="badge text-primary bg-primary-subtle font-size-12">Open</span>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </a>
-                                                
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Action</a>
-                                                        <a class="dropdown-item" href="#">Another action</a>
-                                                        <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">03</th>
-                                            <td><a href="#" class="text-dark">Chat app Design</a></td>
-                                            <td>
-                                                28 May, 2020
-                                            </td>
-                                            <td>
-                                                <span class="badge text-success  bg-success-subtle font-size-12">Complete</span>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </a>
-                                                
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Action</a>
-                                                        <a class="dropdown-item" href="#">Another action</a>
-                                                        <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">04</th>
-                                            <td><a href="#" class="text-dark">Minible Landing</a></td>
-                                            <td>
-                                                13 May, 2020
-                                            </td>
-                                            <td>
-                                                <span class="badge text-success  bg-success-subtle font-size-12">Complete</span>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </a>
-                                                
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Action</a>
-                                                        <a class="dropdown-item" href="#">Another action</a>
-                                                        <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">05</th>
-                                            <td><a href="#" class="text-dark">Authentication Pages</a></td>
-                                            <td>
-                                                06 May, 2020
-                                            </td>
-                                            <td>
-                                                <span class="badge text-success  bg-success-subtle font-size-12">Complete</span>
-                                            </td>
-                                            <td>
-                                                <div class="dropdown">
-                                                    <a class="text-muted dropdown-toggle font-size-18 px-2" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </a>
-                                                
-                                                    <div class="dropdown-menu dropdown-menu-end">
-                                                        <a class="dropdown-item" href="#">Action</a>
-                                                        <a class="dropdown-item" href="#">Another action</a>
-                                                        <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -274,17 +144,35 @@
     </div>
     <div class="col-xl-4">
         <div class="card overflow-hidden">
-            <div class="profile-user"></div>
             <div class="card-body">
-                <div class="profile-content text-center">
-                    <div class="profile-user-img">
-                        <img src="{!! url('assets/images/users/avatar-1.jpg') !!}" alt="" class="avatar-lg rounded-circle img-thumbnail">
+                <div>
+                    <h5 class="font-size-16 mb-4">Riwayat Kursus</h5>
+                    <hr>
+                    <div class="table-responsive">
+                        <table class="table table-nowrap table-hover mb-0">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Materi</th>
+                                    <th scope="col" style="width: 120px;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+
+                                    <td><a href="#" class="text-dark">Brand Logo Design</a></td>
+                                    <td>
+                                        <span class="badge text-primary bg-primary-subtle font-size-12">Open</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#" class="text-dark">Minible Admin</a></td>
+                                    <td>
+                                        <span class="badge text-success bg-success-subtle font-size-12">Complete</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <h5 class="mt-3 mb-1">{{Auth::user()->name}}</h5>
-                    <p class="text-muted">{{Auth::user()->email}}</p>
-                    <p class="text-muted mb-1">
-                        Hi I'm Peter Kelsey!,has been the industry's standard dummy text To an English person, 
-                        it will seem like simplified English, as a skeptical Cambridge.</p>
                 </div>
                 
             </div>
@@ -293,4 +181,14 @@
     </div>
 </div>
 <!-- end row -->
+<script>
+    selectImage.onchange = evt => {
+        preview = document.getElementById('preview');
+        preview.style.display = 'block';
+        const [file] = selectImage.files
+        if (file) {
+            preview.src = URL.createObjectURL(file)
+        }
+    }
+</script>
 @endsection

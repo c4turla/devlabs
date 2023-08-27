@@ -41,19 +41,19 @@
                         </a>
                     </li>
 
-                    <li class="menu-title" data-key="t-applications">Applications</li>
+                    <li class="menu-title" data-key="t-applications">Menu Saya</li>
 
                     <li>
                         <a href="{{ url('/siswa/profile') }}">
                             <i class="bx bxs-user-detail icon nav-icon"></i>
-                            <span class="menu-item" data-key="t-calendar">My Profile</span>
+                            <span class="menu-item" data-key="t-calendar">Profil Saya</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="{{ url('/siswa/course') }}">
                             <i class="bx bx-receipt icon nav-icon"></i>
-                            <span class="menu-item" data-key="t-chat">My Course</span>
+                            <span class="menu-item" data-key="t-chat">Materi Kursus</span>
                             <span class="badge rounded-pill bg-danger" data-key="t-hot">Hot</span>
                         </a>
                     </li>
