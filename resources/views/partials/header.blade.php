@@ -174,11 +174,10 @@
                     @else
                     <img class="rounded-circle header-profile-user" src="{!! url('assets/images/users/noimage.png') !!}"
                         alt="Header Avatar">
-                    @endif
-                    
+                    @endif                    
                 </button>
                 <div class="dropdown-menu dropdown-menu-end pt-0">
-                    <a class="dropdown-item" href="contacts-profile.html"><i
+                    <a class="dropdown-item" href="{{ route('siswa.profile')}}"><i
                             class='bx bx-user-circle text-muted font-size-18 align-middle me-1'></i> <span
                             class="align-middle">My Account</span></a>
                     <a class="dropdown-item" href="pages-faqs.html"><i

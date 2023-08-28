@@ -53,7 +53,7 @@
                                         <i class="bx bx-dots-horizontal-rounded"></i>
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end">
-                                        <li><a class="dropdown-item" href="">Edit</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('admin.editprofile')}}">Edit</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -81,50 +81,26 @@
                         <h5 class="card-title mb-0">Detail User</h5>
                     </div>
                     <div class="card-body">
-                        <div>
-                            <div class="pb-1">
-                                <div class="row">
-                                    <div class="col-xl-2">
-                                        <div>
-                                            <h5 class="font-size-15">Nama :</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl">
-                                        <div class="text-muted">
-                                            <p class="mb-2">{{Auth::user()->name}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pb-1">
-                                <div class="row">
-                                    <div class="col-xl-2">
-                                        <div>
-                                            <h5 class="font-size-15">Email :</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl">
-                                        <div class="text-muted">
-                                            <p>{{Auth::user()->email}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="pb-1">
-                                <div class="row">
-                                    <div class="col-xl-2">
-                                        <div>
-                                            <h5 class="font-size-15">Nomor HP :</h5>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl">
-                                        <div class="text-muted">
-                                            <p>{{Auth::user()->nomor_hp}}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="table table-striped table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Nama</th>
+                                    <td>{{Auth::user()->name}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Email</th>
+                                    <td>{{Auth::user()->email}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Nomor Hp</th>
+                                    <td>{{Auth::user()->nomor_hp}}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Alamat</th>
+                                    <td>{{Auth::user()->alamat}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <!-- end card body -->
                 </div>

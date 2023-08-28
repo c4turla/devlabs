@@ -49,6 +49,41 @@ class KuisController extends Controller
         return back()->with('success', 'Soal Latihan berhasil ditambahkan.');
     }
 
+    public function editKuis(Request $request, $id)
+    {
+        $request->validate([
+            'gambar_soal' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+        ]);
+
+        $kuis = Kuis::findOrFail($id);
+
+        $gambarPath = $kuis->gambar_soal; // Simpan path gambar yang sudah ada
+
+        if ($request->hasFile('gambar_soal')) {
+            // Hapus gambar yang sudah ada jika ada
+            if ($gambarPath && Storage::disk('public')->exists($gambarPath)) {
+                Storage::disk('public')->delete($gambarPath);
+            }
+
+            $gambarPath = $request->file('gambar_soal')->store('assets/images/soal', 'public');
+        }
+
+        $kuis->update([
+            'soal' => $request->soal,
+            'materi_id' => $request->materi_id,
+            'gambar_soal' => $gambarPath,
+            'pilihan_a' => $request->pilihan_a,
+            'pilihan_b' => $request->pilihan_b,
+            'pilihan_c' => $request->pilihan_c,
+            'pilihan_d' => $request->pilihan_d,
+            'pilihan_e' => $request->pilihan_e,
+            'jawaban_benar' => $request->jawaban_benar,
+            'skor' => $request->skor,
+        ]);
+
+        return back()->with('success', 'Soal Latihan berhasil diubah.');
+    }
+
     public function destroy(Kuis $kuis)
     {
         $kuis->delete();

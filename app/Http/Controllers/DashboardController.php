@@ -34,6 +34,44 @@ class DashboardController extends Controller
         return view('admin.profile.profile');
     }
 
+    public function editprofile()
+    {
+        return view('admin.profile.edit');
+    }
+
+    public function storeprofile(Request $request)
+    {
+        $user = Auth::user();
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Validasi gambar
+            'nomor_hp' => 'required',
+        ]);
+
+        // Mendapatkan path gambar lama
+        $gambarPath = $user->photo;
+
+        if ($request->hasFile('photo')) {
+            // Menghapus gambar lama jika ada
+            if ($user->photo) {
+                Storage::delete('public/' . $user->photo);
+            }
+
+            // Mengupload gambar baru
+            $gambarPath = $request->file('photo')->store('assets/images/user', 'public');
+        }
+
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'photo' => $gambarPath,
+            'nomor_hp' => $request->nomor_hp,
+            'alamat' => $request->alamat,
+        ]);
+        return back()->with('success', 'Profil Anda Berhasil diupdate');
+    }
+
     public function updateprofile(Request $request)
     {
         $user = Auth::user();

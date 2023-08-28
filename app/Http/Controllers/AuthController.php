@@ -48,7 +48,10 @@ class AuthController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
+        $remember = $request->has('remember');
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $remember)) {
             $user = Auth::user();
             if ($user->level === 'admin') {
                 // Redirect ke halaman admin
@@ -62,6 +65,26 @@ class AuthController extends Controller
         return back()->withErrors([
             'password' => 'Email atau Password anda Salah',
         ]);
+    }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'password' => 'required|confirmed|min:8',
+        ]);
+
+        $user = Auth::user();
+
+        if (Hash::check($request->current_password, $user->password)) {
+            $user->update([
+                'password' => Hash::make($request->password),
+            ]);
+
+            return back()->with('success', 'Password berhasil diubah.');
+        } else {
+            return back()->withErrors(['current_password' => 'Password anda saat ini salah.']);
+        }
     }
 
     public function logout(Request $request)

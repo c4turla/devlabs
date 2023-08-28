@@ -51,9 +51,13 @@
                                 <div class="mb-3 row">
                                     <label for="password" class="col-md-4 col-form-label">Photo</label>
                                     <div class="col-md-2">
-                                        <img src="{{ asset('storage/' . Auth::user()->photo) }}" class="rounded-3 avatar-xl" alt="" id="preview">
+                                        @if(Auth::user()->photo)
+                                        <img class="rounded-3 avatar-xl" alt="" src="{{ asset('storage/' . Auth::user()->photo) }}" id="preview">
+                                        @else
+                                        <img class="rounded-3 avatar-xl" alt="" src="{!! url('assets/images/users/noimage.png') !!}" id="preview">
+                                        @endif   
                                     </div>
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                         <input class="form-control d-inline" type="file" id="selectImage" name="photo">
                                     </div>        
                                 </div>
@@ -107,6 +111,8 @@
                     </div>
                 </div>
                 <div class="tab-pane" id="tasks" role="tabpanel">
+                    <form action="{{ route('change.password') }}" method="POST">
+                        @csrf
                     <div>
                         <h5 class="font-size-16 mb-3">Ganti Password</h5>
                         <small> Gunakan form ini untuk <code>Ganti Password </code></small>
@@ -114,19 +120,19 @@
                             <div class="mb-3 row">
                                 <label for="password" class="col-md-4 col-form-label">Password Lama</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="password" value="" id="password" name="password">
+                                    <input class="form-control" type="password" value="" id="current_password" name="current_password">
                                 </div>        
                             </div>
                             <div class="mb-3 row">
                                 <label for="newpassword" class="col-md-4 col-form-label">Password Baru</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="password" value="" id="newpassword" name="newpassword">
+                                    <input class="form-control" type="password" value="" id="password" name="password">
                                 </div>        
                             </div>
                             <div class="mb-3 row">
-                                <label for="confnewpassword" class="col-md-4 col-form-label">Konfirmasi Password Baru</label>
+                                <label for="password_confirmation" class="col-md-4 col-form-label">Konfirmasi Password Baru</label>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="password"  id="confnewpassword" name="confnewpassword">
+                                    <input class="form-control" type="password"  id="password_confirmation" name="password_confirmation">
                                 </div>        
                             </div>
 
@@ -134,10 +140,9 @@
                                 <button class="btn btn-success" type="submit"><i class="bx bx-save me-1"></i> Simpan</button>
                                 <button class="btn btn-warning" type="reset"><i class="bx bx-reset me-1"></i> Reset</button>
                             </div>
-                        </div>
-
-
+                        </div>           
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

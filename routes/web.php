@@ -16,7 +16,7 @@ use App\Http\Controllers\KelasController;
 
 Route::group(['namespace' => 'App\Http\Controllers'], function()
 { 
-
+    // Web Panel routes
     Route::group(['middleware' => ['guest']], function() {
         Route::get('/', 'HomeController@index')->name('home.index');
         Route::get('/about', 'HomeController@about')->name('home.about');
@@ -71,13 +71,18 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('admin/kuis', 'KuisController@index')->name('admin.kuis');
         Route::get('admin/{materi}/tambahkuis', 'KuisController@tambah')->name('admin.tambahkuis');
         Route::post('admin/storekuis', 'KuisController@storekuis')->name('admin.storekuis');
+        Route::put('admin/kuisupdate/{id}', 'KuisController@editKuis')->name('admin.kuisupdate');
         Route::delete('admin/{kuis}/delkuis', 'KuisController@destroy')->name('admin.hapuskuis');
         //Siswa
         Route::get('siswa/dashboard', 'DashboardController@siswa')->name('siswa.dashboard');
         Route::get('siswa/profile', 'DashboardController@siswaprofile')->name('siswa.profile');
         Route::get('siswa/course', 'DashboardController@course')->name('siswa.course');
-        Route::get('profile', 'DashboardController@profile')->name('profile');
         Route::put('siswa/saveprofile', 'DashboardController@updateprofile')->name('siswa.saveprofile');
+        //Administrator
+        Route::get('profile', 'DashboardController@profile')->name('profile');
+        Route::get('admin/editprofile', 'DashboardController@editprofile')->name('admin.editprofile');
+        Route::put('admin/storeprofile', 'DashboardController@storeprofile')->name('admin.storeprofile');
+        Route::post('change-password', 'AuthController@changePassword')->name('change.password');
     });
 
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

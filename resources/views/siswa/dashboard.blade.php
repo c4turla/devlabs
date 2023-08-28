@@ -45,7 +45,7 @@
                         <p class="text-white-50 mt-4">Silahkan pilih menu yang anda inginkan. Lengkapi profile anda dengan klik menu dibawah ini.</p>
                         
                         <div class="mt-4 pt-2 mb-1">
-                            <a href="{{ route('profile') }}" class="btn btn-success">Lihat Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
+                            <a href="{{ route('siswa.profile') }}" class="btn btn-success">Lihat Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
                         </div>
                    </div>
                 </div>

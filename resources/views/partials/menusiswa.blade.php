@@ -96,7 +96,7 @@
                     <li class="menu-title" data-key="t-pages">Pages</li>
         
                     <li>
-                        <a href="layouts-vertical.html">
+                        <a href="#">
                             <i class="bx bx-user-circle icon nav-icon"></i>
                             <span class="menu-item" data-key="t-vertical">Setting</span>
                         </a>
