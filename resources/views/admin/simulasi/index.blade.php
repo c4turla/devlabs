@@ -6,12 +6,12 @@
 <div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
-            <h4 class="mb-0">List Kuis</h4>
+            <h4 class="mb-0">List Simulasi</h4>
 
             <div class="page-title-right">
                 <ol class="breadcrumb m-0">
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Kuis</a></li>
-                    <li class="breadcrumb-item active">List Kuis</li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Simulasi</a></li>
+                    <li class="breadcrumb-item active">List Simulasi</li>
                 </ol>
             </div>
 
@@ -26,19 +26,13 @@
                 <div class="row">
                     <div class="col-sm">
                         <div class="mb-4">
-                            <h3 class="card-title">List Kuis</h3>
-                            <p class="card-title-desc">Daftar Materi Beserta Soal Latihan.</p>
+                            <h3 class="card-title">List Simulasi</h3>
+                            <p class="card-title-desc">Daftar Materi Beserta Simulasi/Praktikum.</p>
                         </div>
 
                     </div>
                     <div class="col-sm-auto">
                         <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
-                            
-{{--                             <div>
-                                <a href="{{ route('admin.tambahkelas') }}" class="btn btn-primary"><i
-                                        class="bx bx-plus me-1"></i> Tambah Kuis</a>
-                            </div>
- --}}
                         </div>
                     </div>
                 </div>
@@ -50,38 +44,38 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th>Judul Materi</th>
-                                <th>Kuis</th>
+                                <th>Simulasi</th>
                                 <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($materiWithKuis as $materi)
+                            @foreach ($materiWithSimulasi as $materi)
                             <tr>
                                 <th scope="row">#</th>
                                 <td>{{ $materi->judul }}</td>
                                 <td>
-                                    @if ($materi->kuis->isEmpty())
-                                        Kuis belum ada.
+                                    @if ($materi->praktikum->isEmpty())
+                                        Simulasi belum ada.
                                     @else
-                                        Total Soal: {{ $materi->kuis->count() }}
+                                        Total Simulasi: {{ $materi->praktikum->count() }}
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route('admin.tambahkuis',$materi->id) }}" class="btn btn-success btn-sm"><i class="fas fa-comment-medical"></i>
-                                        Tambah Kuis
+                                    <a href="{{ route('admin.tambahsimulasi',$materi->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-drafting-compass"></i>
+                                        Tambah Simulasi
                                     </a>
                                 </td>
                             </tr>
                             @endforeach
                 
-                            @foreach ($materiWithoutKuis as $materi)
+                            @foreach ($materiWithoutSimulasi as $materi)
                             <tr>
                                 <th scope="row">#</th>
                                 <td>{{ $materi->judul }}</td>
-                                <td>Kuis belum ada.</td>
+                                <td>Simulasi belum ada.</td>
                                 <td>
-                                    <a href="{{ route('admin.tambahkuis',$materi->id) }}" class="btn btn-success btn-sm"><i class="fas fa-comment-medical"></i>
-                                        Tambah Kuis
+                                    <a href="{{ route('admin.tambahsimulasi',$materi->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-drafting-compass"></i>
+                                        Tambah Simulasi
                                     </a>
                                 </td>
                             </tr>
@@ -92,7 +86,7 @@
                     <nav aria-label="...">
                         <ul class="pagination pagination-sm mb-0">
                             <li class="page-item">
-                                {{ $materiWithoutKuis->links() }}
+                                {{ $materiWithoutSimulasi->links() }}
                             </li>
                         </ul>
                     </nav>

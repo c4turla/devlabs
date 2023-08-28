@@ -62,6 +62,14 @@
                             </li>
 
                             <li class="nav-item">
+                                <a class="nav-link dropdown-toggle arrow-none" href="{{ url('/admin/simulasi') }}" id="topnav-dashboard" role="button"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class='bx bxs-chip'></i>
+                                    <span data-key="t-dashboards">Simulasi</span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
                                 <a class="nav-link dropdown-toggle arrow-none" href="{{ url('/admin/kuis') }}" id="topnav-dashboard" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class='bx bx-receipt'></i>

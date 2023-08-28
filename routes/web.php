@@ -14,10 +14,9 @@ use App\Http\Controllers\KelasController;
 |
 */
 
-Route::group(['namespace' => 'App\Http\Controllers'], function()
-{ 
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
     // Web Panel routes
-    Route::group(['middleware' => ['guest']], function() {
+    Route::group(['middleware' => ['guest']], function () {
         Route::get('/', 'HomeController@index')->name('home.index');
         Route::get('/about', 'HomeController@about')->name('home.about');
         Route::get('/contact', 'HomeController@contact')->name('home.contact');
@@ -29,9 +28,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::post('registeraction', 'AuthController@registeraction')->name('registeraction');
         Route::get('login', 'AuthController@login')->name('auth.login');
         Route::post('loginaction', 'AuthController@loginaction')->name('loginaction');
+        Route::get('materi-kelas-10', 'HomeController@filterKelassep')->name('home.materi10');
+        Route::get('materi-kelas-11', 'HomeController@filterKelasseb')->name('home.materi11');
+        Route::get('materi-kelas-12', 'HomeController@filterKelasdua')->name('home.materi12');
     });
 
-    Route::group(['middleware' => ['auth']], function() {
+    Route::group(['middleware' => ['auth']], function () {
         Route::get('logout', 'AuthController@logout')->name('logout');
         Route::get('admin/dashboard', 'DashboardController@index')->name('admin.dashboard');
         //Kategori
@@ -47,8 +49,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::get('admin/{kelas}/editkelas', 'KelasController@edit')->name('admin.editkelas');
         Route::patch('admin/{kelas}/updatekelas', 'KelasController@update')->name('admin.updatekelas');
         Route::delete('admin/{kelas}/destroy', 'KelasController@destroy')->name('admin.deletekelas');
-       // Route::resource('admin/kelass', KelasController::class);
-      //  Route::get('kelas/list', [KelasController::class, 'getKelas'])->name('kelas.list');
+        // Route::resource('admin/kelass', KelasController::class);
+        //  Route::get('kelas/list', [KelasController::class, 'getKelas'])->name('kelas.list');
         Route::get('admin/pengguna', 'UserController@index')->name('admin.pengguna');
         //Materi
         Route::get('admin/materi', 'MateriController@index')->name('admin.materi');
@@ -73,6 +75,12 @@ Route::group(['namespace' => 'App\Http\Controllers'], function()
         Route::post('admin/storekuis', 'KuisController@storekuis')->name('admin.storekuis');
         Route::put('admin/kuisupdate/{id}', 'KuisController@editKuis')->name('admin.kuisupdate');
         Route::delete('admin/{kuis}/delkuis', 'KuisController@destroy')->name('admin.hapuskuis');
+        //Simulasi
+        Route::get('admin/simulasi', 'SimulasiController@index')->name('admin.simulasi');
+        Route::get('admin/{materi}/tambahsimulasi', 'SimulasiController@tambah')->name('admin.tambahsimulasi');
+        Route::post('admin/storesimulasi', 'SimulasiController@storesimulasi')->name('admin.storesimulasi');
+        Route::put('admin/simulasiupdate/{id}', 'SimulasiController@editSimulasi')->name('admin.simulasiupdate');
+        Route::delete('admin/{praktikum}/delsimulasi', 'SimulasiController@destroy')->name('admin.hapussimulasi');
         //Siswa
         Route::get('siswa/dashboard', 'DashboardController@siswa')->name('siswa.dashboard');
         Route::get('siswa/profile', 'DashboardController@siswaprofile')->name('siswa.profile');

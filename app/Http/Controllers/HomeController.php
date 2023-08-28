@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Artikel;
 use App\Models\Kategori;
+use App\Models\Materi;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -47,5 +48,29 @@ class HomeController extends Controller
        // $artikels = Artikel::findOrFail($id);
         $randomArticleTitle = Artikel::inRandomOrder()->take(5)->get();
         return view('site.blogshow', compact('artikel', 'randomArticleTitle'));
+    }
+
+    public function filterKelassep(Request $request)
+    {
+        $kelasIds = [1, 4]; // Daftar kelas yang ingin di-filter
+        $materi = Materi::whereIn('kelas', $kelasIds)->get();
+
+        return view('site.materi10', compact('materi'));
+    }
+
+    public function filterKelasseb(Request $request)
+    {
+        $kelasIds = [2, 5]; // Daftar kelas yang ingin di-filter
+        $materi = Materi::whereIn('kelas', $kelasIds)->get();
+
+        return view('site.materi11', compact('materi'));
+    }
+
+    public function filterKelasdua(Request $request)
+    {
+        $kelasIds = [3, 6]; // Daftar kelas yang ingin di-filter
+        $materi = Materi::whereIn('kelas', $kelasIds)->get();
+
+        return view('site.materi12', compact('materi'));
     }
 }

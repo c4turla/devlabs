@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kuis;
 use App\Models\Materi;
+use Illuminate\Support\Facades\Storage;
 
 class KuisController extends Controller
 {

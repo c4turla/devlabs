@@ -43,7 +43,7 @@
 
                                         <div class="mb-3">
                                             <label class="form-label" for="name">Nomor HP</label>
-                                            <input type="number" class="form-control" id="nomor_hp" name="nomor_hp" placeholder="+628XXXX" value="{{ old('nomor_hp') }}">   
+                                            <input type="number" class="form-control" id="nomor_hp" name="nomor_hp" placeholder="628XXXX" value="{{ old('nomor_hp') }}">   
                                             @if ($errors->has('nomor_hp'))
                                             <span class="text-danger">{{ $errors->first('nomor_hp') }}</span>
                                             @endif          
