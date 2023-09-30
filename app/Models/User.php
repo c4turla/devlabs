@@ -19,7 +19,7 @@ class User extends Authenticatable
      */
     protected $table = 'tb_user';
     protected $primaryKey = 'user_id';
-    protected $fillable = ['name','email','password','level','nomor_hp','photo','kelas','alamat'];
+    protected $fillable = ['name', 'email', 'password', 'level', 'nomor_hp', 'photo', 'kelas', 'alamat'];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -39,4 +39,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function materi()
+    {
+        return $this->belongsToMany(Materi::class, 'tb_materi_user', 'user_id', 'materi_id')
+            ->withPivot('skor');
+    }
+
+    public function siswaSkor()
+    {
+        return $this->hasMany(SiswaSkor::class, 'id_siswa');
+    }
 }

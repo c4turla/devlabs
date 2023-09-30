@@ -12,7 +12,18 @@ class HomeController extends Controller
     public function index()
     {
         $article = Artikel::take(3)->get();
-        return view('site.home', compact('article'));
+        $kategori = Kategori::with(['kelas.materi' => function($query) {
+            $query->inRandomOrder()->limit(3);
+        }])->get();
+        $selectedMaterials = [];
+        foreach ($kategori as $category) {
+            foreach ($category->kelas as $class) {
+                $selectedMaterials = array_merge($selectedMaterials, $class->materi->toArray());
+            }
+        }
+        shuffle($selectedMaterials);
+        $randomMaterials = array_slice($selectedMaterials, 0, 3);
+        return view('site.home', compact('article','kategori','randomMaterials'));
     }
 
     public function about()

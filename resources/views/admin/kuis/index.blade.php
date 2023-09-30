@@ -33,12 +33,6 @@
                     </div>
                     <div class="col-sm-auto">
                         <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
-                            
-{{--                             <div>
-                                <a href="{{ route('admin.tambahkelas') }}" class="btn btn-primary"><i
-                                        class="bx bx-plus me-1"></i> Tambah Kuis</a>
-                            </div>
- --}}
                         </div>
                     </div>
                 </div>

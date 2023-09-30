@@ -77,7 +77,7 @@
                                                 </div>    
                                                 <div>
                                                     <ul class="list-inline mb-0 text-muted product-color">
-                                                        <a class="btn btn-success btn-sm" href="#"><i class="fas fa-eye"></i> Lihat</a>
+                                                        <a class="btn btn-success btn-sm" href="{{ route('siswa.detailmateri',$materi->id) }}"><i class="fas fa-eye"></i> Lihat</a>
                                                     </ul>
                                                 </div>
                                             </div>

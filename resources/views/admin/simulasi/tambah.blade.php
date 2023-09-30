@@ -80,7 +80,7 @@
                                                         name="gambar"><br />
                                                 </div>
                                                 <label>Deskripsi</label>
-                                                <textarea class="form-control" id="my-editor" name="description"></textarea>
+                                                <textarea class="form-control" id="my-editor2" name="description"></textarea>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-light"
@@ -225,6 +225,7 @@
 </script>
 <script>
     CKEDITOR.replace('my-editor', options);
+    CKEDITOR.replace('my-editor2', options);
 </script>
 
 @endsection

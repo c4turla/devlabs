@@ -12,6 +12,7 @@
                                 <div class="text-center mt-2">                                    
                                     <h5 class="text-primary">Registrasi Akun</h5>
                                     <p class="text-muted">Daftar Akun di DevLabs Gratis.</p>
+                                    <img src="{!! url('assets/images/logobaru.png') !!}" height="120">
                                 </div>
                                 <div class="p-2 mt-4">
 

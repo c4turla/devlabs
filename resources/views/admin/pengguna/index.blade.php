@@ -35,7 +35,7 @@
                         <div class="d-flex flex-wrap align-items-center justify-content-end gap-2 mb-3">
 
                             <div>
-                                <a href="{{ route('admin.tambahkelas') }}" class="btn btn-primary"><i
+                                <a href="{{ route('admin.tambahpengguna') }}" class="btn btn-primary"><i
                                         class="bx bx-plus me-1"></i> Tambah Pengguna</a>
                             </div>
 
@@ -67,8 +67,8 @@
                                 <td>{{ $user->level }}</td>
                                 <td>{{ $user->alamat }}</td>
                                 <td>                                    
-                                    <form action="{{ route('admin.deletekelas', $user->user_id) }}" method="POST" class="d-inline">
-                                        <a href="{{ route('admin.editkelas',$user->user_id) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                    <form action="{{ route('admin.deletepengguna', $user->user_id) }}" method="POST" class="d-inline">
+                                        <a href="{{ route('admin.editpengguna',$user->user_id) }}" class="btn btn-success btn-sm"><i class="fas fa-edit"></i> Edit</a>
                                         @csrf
                                         <input name="_method" type="hidden" value="DELETE">
                                         <button type="submit" class="btn btn-danger btn-sm swal-confirm" data-confirm-text="Apakah Anda yakin ingin menghapus data ini?"><i class="fas fa-trash"></i>

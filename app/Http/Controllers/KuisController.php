@@ -23,6 +23,12 @@ class KuisController extends Controller
         return view('admin.kuis.tambah',compact('materi', 'kuis'));
     }
 
+    public function add(Materi $materi)
+    {
+        $kuis = Kuis::where('materi_id', $materi->id)->get();
+        return view('admin.kuis.add',compact('materi', 'kuis'));
+    }
+
     public function storekuis(Request $request)
     {
         $request->validate([
@@ -48,6 +54,12 @@ class KuisController extends Controller
             'skor' => $request->skor,
         ]);
         return back()->with('success', 'Soal Latihan berhasil ditambahkan.');
+    }
+
+    public function edit(Kuis $kuis)
+    {
+        $materi = Materi::all();
+        return view('admin.kuis.edit',compact('kuis', 'materi'));
     }
 
     public function editKuis(Request $request, $id)
@@ -82,7 +94,7 @@ class KuisController extends Controller
             'skor' => $request->skor,
         ]);
 
-        return back()->with('success', 'Soal Latihan berhasil diubah.');
+        return redirect()->route('admin.tambahkuis',$kuis->materiid->id)->with('success', 'Soal Latihan berhasil diubah.');
     }
 
     public function destroy(Kuis $kuis)

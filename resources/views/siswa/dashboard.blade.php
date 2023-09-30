@@ -1,9 +1,9 @@
 @extends('partials.layout')
 
 @section('content')
- 
- <!-- start page title -->
- <div class="row">
+
+<!-- start page title -->
+<div class="row">
     <div class="col-12">
         <div class="page-title-box d-flex align-items-center justify-content-between">
             <h4 class="mb-0">Welcome !</h4>
@@ -37,119 +37,171 @@
                         <li><i class="bx bx-coffee font-size-24"></i></li>
                         <li><i class="bx bx-polygon font-size-24"></i></li>
                     </ul>
-                   <div class="main-wid position-relative">
+                    <div class="main-wid position-relative">
                         <h3 class="text-white">DevLabs Academy</h3>
 
                         <h3 class="text-white mb-0"> Selamat Datang, {{Auth::user()->name}}!</h3>
 
-                        <p class="text-white-50 mt-4">Silahkan pilih menu yang anda inginkan. Lengkapi profile anda dengan klik menu dibawah ini.</p>
-                        
+                        <p class="text-white-50 mt-4">Silahkan pilih menu yang anda inginkan. Lengkapi profile anda
+                            dengan klik menu dibawah ini.</p>
+
                         <div class="mt-4 pt-2 mb-1">
-                            <a href="{{ route('siswa.profile') }}" class="btn btn-success">Lihat Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
+                            <a href="{{ route('siswa.profile') }}" class="btn btn-success">Lihat Profile <i
+                                    class="mdi mdi-arrow-right ms-1"></i></a>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-xl-12">
+
+<div class="col-xl-12">
+    <div class="row">
         <div class="card">
-            <div class="card-body">
-                <div class="d-flex flex-wrap align-items-center mb-0">
-                    <h5 class="card-title mb-0">Statistik Pengunjung</h5>
-                    <div class="ms-auto">
-                        <div class="dropdown">
-                            <a class="dropdown-toggle text-reset" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="text-muted font-size-12">Sort By:</span> <span class="fw-medium">Weekly<i class="mdi mdi-chevron-down ms-1"></i></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-                                <a class="dropdown-item" href="#">Monthly</a>
-                                <a class="dropdown-item" href="#">Yearly</a>
+            <div class="card-header">
+                <h2>Sekilas Tentang Devlabs</h2>
+                <hr>
+                <div class="row">
+                    <div class="card">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-2">
+                                <img class="card-img img-fluid" src="{!! url('assets/images/logobaru.png') !!}"
+                                    alt="Logo">
+                            </div>
+                            <div class="col-md-9">
+                                <div class="card-body">
+                                    <p class="card-title-desc"><strong>Devlabs</strong> merupakan Media pembelajaran
+                                        Digital Era 5.0 yang
+                                        memadukan <i>e-learning</i> dan laboratoriun virtual dalam bentuk simulasi.</p>
+                                    <br />
+                                    <p class="card-title-desc">
+                                        <strong>Devlabs</strong> sebagai pioneer pembelajaran kimia berbasis digital yg
+                                        memudahkan pelajari
+                                        maupun pengguna lainnya dapat mengakases pembelajaran kimia tanpa dibatasi waktu
+                                        dan
+                                        tempat, prinsip belajar kapanpun dan dimanapun yang sejalan dengan prinsip
+                                        Merdeka
+                                        Bejalar.
+                                    </p>
+
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-               <div class="row align-items-center">
-                <div class="col-xl-8">
-                    <div>
-                         <div id="sales-statistics" data-colors='["#eff1f3","#eff1f3","#eff1f3","#eff1f3","#33a186","#3980c0","#eff1f3","#eff1f3","#eff1f3", "#eff1f3"]' class="apex-chart"></div>
-                    </div>
-                  </div>
-                   <div class="col-xl-4">
-                       <div class="">
-                            <div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex">
-                                        <i class="mdi mdi-circle font-size-10 mt-1 text-primary"></i>
-                                        <div class="flex-1 ms-2">
-                                            <p class="mb-0">Product Order</p>
-                                            <h5 class="mt-1 mb-0 font-size-16">43,541.58</h5>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge text-primary bg-primary-subtle">25.4%<i class="mdi mdi-arrow-down ms-2"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-3 border-top pt-3">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex">
-                                        <i class="mdi mdi-circle font-size-10 mt-1 text-primary"></i>
-                                        <div class="flex-1 ms-2">
-                                            <p class="mb-0">Product Pending</p>
-                                            <h5 class="mt-1 mb-0 font-size-16">17,351.12</h5>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge text-primary bg-primary-subtle">17.4%<i class="mdi mdi-arrow-down ms-2"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-3 border-top pt-3">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex">
-                                        <i class="mdi mdi-circle font-size-10 mt-1 text-success"></i>
-                                        <div class="flex-1 ms-2">
-                                            <p class="mb-0">Product Cancelled</p>
-                                            <h5 class="mt-1 mb-0 font-size-16">32,569.74</h5>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge text-success  bg-success-subtle">16.3%<i class="mdi mdi-arrow-up ms-1"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="mt-3 border-top pt-3">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex">
-                                        <i class="mdi mdi-circle font-size-10 mt-1 text-primary"></i>
-                                        <div class="flex-1 ms-2">
-                                            <p class="mb-0">Product Delivered</p>
-                                            <h5 class="mt-1 mb-0 font-size-16">67,356.24</h5>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="badge text-primary bg-primary-subtle">65.7%<i class="mdi mdi-arrow-up ms-1"></i></span>
-                                    </div>
-                                </div>
-                            </div>
-                       </div>
-                   </div>
-                   
-               </div>
-
-            </div>
+            </div><!-- end card header -->
         </div>
     </div>
-
 </div>
+
+<div class="col-xl-12">
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <h2>Tim Pengembang</h2>
+            </div><!-- end card header -->
+            <div class="row">
+                <div class="col-xl-3 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="align-items-center">
+                                <div>
+                                    <img src="{!! url('assets/images/users/Pengembang1.png') !!}" alt="Pengembang 1"
+                                        class="img-fluid." width="100%" height="250">
+                                </div>
+                                <br />
+                                <div class="flex-1 ms-3">
+                                    <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">Muh. Alim Marhadi,
+                                            S.Pd.,M.Pd</a></h5>
+                                    <p class="text-muted mb-0">Dosen Universitas Halu Oleo</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-muted">Jurusan Pendidikan Kimia, FKIP Universitas Halu Oleo</p>
+                            <p><i class="bx bx-user me-1"></i> Alamat : Jl. Dewi Sartika, Kel. Abeli Kec. Abeli</p>
+                            <p><i class="bx bx-mail-send me-1"></i> Email :<a href="mailto:alim.marhadi@uho.ac.id"> alim.marhadi@uho.ac.id</a></p>
+
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+                <div class="col-xl-3 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="align-items-center">
+                                <div>
+                                    <img src="{!! url('assets/images/users/Pengembang2.png') !!}" alt="Pengembang 2"
+                                        class="img-fluid. " width="100%" height="250">
+                                </div>
+                                <br />
+                                <div class="flex-1 ms-3">
+                                    <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">Maysara., S.Pd.,M.Pd</a>
+                                    </h5>
+                                    <p class="text-muted mb-0">Dosen Universitas Halu Oleo</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-muted">Jurusan Pendidikan Kimia, FKIP Universitas Halu Oleo</p>
+                            <p><i class="bx bx-user me-1"></i> Alamat : BTN Kendari Permai Blok L4 No 20 Kel. Padaleu, Kec. Kambu</p>
+                            <p><i class="bx bx-mail-send me-1"></i> Email :<a href="mailto:maysara.fkip@uho.ac.id"> maysara.fkip@uho.ac.id</a></p>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+                <div class="col-xl-3 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="align-items-center">
+                                <div>
+                                    <img src="{!! url('assets/images/users/Pengembang3.png') !!}" alt="Pengembang 1"
+                                        class="img-fluid." width="100%" height="250">
+                                </div>
+                                <br />
+                                <div class="flex-1 ms-3">
+                                    <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">Fatahu, S.Pd., M Si</a></h5>
+                                    <p class="text-muted mb-0">Dosen Universitas Halu Oleo</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-muted">Jurusan Pendidikan Kimia, FKIP Universitas Halu Oleo</p>
+                            <p><i class="bx bx-user me-1"></i> Alamat : BTN Kendari Permai Blok B5 No.10</p>
+                            <p><i class="bx bx-mail-send me-1"></i> Email :<a href="mailto:fatahu@uho.ac.id"> fatahu@uho.ac.id</a></p>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+                <div class="col-xl-3 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="align-items-center">
+                                <div>
+                                    <img src="{!! url('assets/images/users/Pengembang4.png') !!}" alt="Pengembang 1"
+                                        class="img-fluid." width="100%" height="250">
+                                </div>
+                                <br />
+                                <div class="flex-1 ms-3">
+                                    <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">Sulastri</a></h5>
+                                    <p class="text-muted mb-0">Mahasiswa Universitas Halu Oleo</p>
+                                </div>
+                            </div>
+                            <p class="mt-3 text-muted">Jurusan Pendidikan Kimia, FKIP Universitas Halu Oleo</p>
+                            <p><i class="bx bx-user me-1"></i> Alamat : BTN Griya Asri Bukit Lepo-lepo indah Blok B</p>
+                            <p><i class="bx bx-mail-send me-1"></i> Email :<a href="mailto:sulastri21050@gmail.com"> sulastri21050@gmail.com</a></p>
+                        </div>
+                    </div>
+                    <!-- end card -->
+                </div>
+                <!-- end col -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
 
 
 @endsection

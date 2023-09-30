@@ -49,9 +49,6 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         Route::get('admin/{kelas}/editkelas', 'KelasController@edit')->name('admin.editkelas');
         Route::patch('admin/{kelas}/updatekelas', 'KelasController@update')->name('admin.updatekelas');
         Route::delete('admin/{kelas}/destroy', 'KelasController@destroy')->name('admin.deletekelas');
-        // Route::resource('admin/kelass', KelasController::class);
-        //  Route::get('kelas/list', [KelasController::class, 'getKelas'])->name('kelas.list');
-        Route::get('admin/pengguna', 'UserController@index')->name('admin.pengguna');
         //Materi
         Route::get('admin/materi', 'MateriController@index')->name('admin.materi');
         Route::get('admin/tambahmateri', 'MateriController@create')->name('admin.tambahmateri');
@@ -72,7 +69,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         //Kuis
         Route::get('admin/kuis', 'KuisController@index')->name('admin.kuis');
         Route::get('admin/{materi}/tambahkuis', 'KuisController@tambah')->name('admin.tambahkuis');
+        Route::get('admin/{materi}/tambahsoal', 'KuisController@add')->name('admin.tambahsoal');
         Route::post('admin/storekuis', 'KuisController@storekuis')->name('admin.storekuis');
+        Route::get('admin/{kuis}/editkuis', 'KuisController@edit')->name('admin.editkuis');
         Route::put('admin/kuisupdate/{id}', 'KuisController@editKuis')->name('admin.kuisupdate');
         Route::delete('admin/{kuis}/delkuis', 'KuisController@destroy')->name('admin.hapuskuis');
         //Simulasi
@@ -85,12 +84,33 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         Route::get('siswa/dashboard', 'DashboardController@siswa')->name('siswa.dashboard');
         Route::get('siswa/profile', 'DashboardController@siswaprofile')->name('siswa.profile');
         Route::get('siswa/course', 'DashboardController@course')->name('siswa.course');
+        Route::get('siswa/{materi}/detailmateri', 'DashboardController@detailmateri')->name('siswa.detailmateri');
+        Route::get('siswa/{materi}/materi', 'DashboardController@materi')->name('siswa.materi');
         Route::put('siswa/saveprofile', 'DashboardController@updateprofile')->name('siswa.saveprofile');
+        Route::post('/mulai-belajar/{materi}', 'DashboardController@mulaiBelajar')->name('siswa.mulaibelajar');
+        Route::get('siswa/kursus-saya', 'DashboardController@kursusSaya')->name('siswa.kursussaya');
+        Route::post('/mulai-praktikum/{materi}', 'DashboardController@mulaiPraktikum')->name('siswa.mulaipraktikum');
+        Route::get('/praktikum/{praktikum}', 'DashboardController@showPraktikum')->name('siswa.showpraktikum');
+        Route::post('/mulai-kuis/{materi}', 'DashboardController@mulaiKuis')->name('siswa.mulaikuis');
+        Route::post('/mulaikuis/{materi}', 'DashboardController@startKuis')->name('siswa.startkuis');
+        Route::get('/kuis/{kuis}', 'DashboardController@showKuis')->name('siswa.showkuis');
+        Route::post('/proses-jawaban', 'DashboardController@prosesJawaban')->name('proses.jawaban');
+
+
         //Administrator
         Route::get('profile', 'DashboardController@profile')->name('profile');
         Route::get('admin/editprofile', 'DashboardController@editprofile')->name('admin.editprofile');
         Route::put('admin/storeprofile', 'DashboardController@storeprofile')->name('admin.storeprofile');
         Route::post('change-password', 'AuthController@changePassword')->name('change.password');
+        //Pengguna
+        Route::get('admin/pengguna', 'UserController@index')->name('admin.pengguna');
+        Route::get('admin/tambahpengguna', 'UserController@tambah')->name('admin.tambahpengguna');
+        Route::post('admin/storepengguna', 'UserController@store')->name('admin.savepengguna');
+        Route::get('admin/{user}/editpengguna', 'UserController@edit')->name('admin.editpengguna');
+        Route::patch('admin/{user}/updatepengguna', 'UserController@update')->name('admin.updatepengguna');
+        Route::put('admin/gantipassword/{id}', 'UserController@gantiPassword')->name('admin.gantipassword');
+        Route::delete('admin/{user}/delpengguna', 'UserController@destroy')->name('admin.deletepengguna');
+
     });
 
     Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {

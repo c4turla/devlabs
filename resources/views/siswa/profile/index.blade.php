@@ -21,7 +21,7 @@
 <!-- end page title -->
 
 <div class="row mb-4">
-    <div class="col-xl-8">
+    <div class="col-xl-12">
         <div class="card mb-0">
             <!-- Nav tabs -->
             <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
@@ -147,43 +147,7 @@
             </div>
         </div>
     </div>
-    <div class="col-xl-4">
-        <div class="card overflow-hidden">
-            <div class="card-body">
-                <div>
-                    <h5 class="font-size-16 mb-4">Riwayat Kursus</h5>
-                    <hr>
-                    <div class="table-responsive">
-                        <table class="table table-nowrap table-hover mb-0">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Materi</th>
-                                    <th scope="col" style="width: 120px;">Status</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
 
-                                    <td><a href="#" class="text-dark">Brand Logo Design</a></td>
-                                    <td>
-                                        <span class="badge text-primary bg-primary-subtle font-size-12">Open</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td><a href="#" class="text-dark">Minible Admin</a></td>
-                                    <td>
-                                        <span class="badge text-success bg-success-subtle font-size-12">Complete</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-    </div>
 </div>
 <!-- end row -->
 <script>

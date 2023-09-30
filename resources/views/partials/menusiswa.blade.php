@@ -59,40 +59,25 @@
                     </li>
 
                     <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i class="bx bx-envelope icon nav-icon"></i>
-                            <span class="menu-item" data-key="t-email">Email</span>
+                        <a href="{{ url('/siswa/kursus-saya') }}">
+                            <i class="bx bx-customize icon nav-icon"></i>
+                            <span class="menu-item" data-key="t-chat">Kursus Saya</span>
                         </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="email-inbox.html" data-key="t-inbox">Inbox</a></li>
-                            <li><a href="email-read.html" data-key="t-read-email">Read Email</a></li>
-                        </ul>
                     </li>
-
-
+{{--                     <li>
+                        <a href="{{ url('/siswa') }}">
+                            <i class="bx bx-git-compare icon nav-icon"></i>
+                            <span class="menu-item" data-key="t-chat">Praktikum</span>
+                        </a>
+                    </li>
                     <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i class="bx bx-receipt icon nav-icon"></i>
-                            <span class="menu-item" data-key="t-invoices">Invoices</span>
+                        <a href="{{ url('/siswa') }}">
+                            <i class="bx bxs-spreadsheet icon nav-icon"></i>
+                            <span class="menu-item" data-key="t-chat">Kuis</span>
                         </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="invoices-list.html" data-key="t-invoice-list">Invoice List</a></li>
-                            <li><a href="invoices-detail.html" data-key="t-invoice-detail">Invoice Detail</a></li>
-                        </ul>
-                    </li>
+                    </li> --}}
 
-                    <li>
-                        <a href="javascript: void(0);" class="has-arrow">
-                            <i class="bx bxs-user-detail icon nav-icon"></i>
-                            <span class="menu-item" data-key="t-contacts">Contacts</span>
-                        </a>
-                        <ul class="sub-menu" aria-expanded="false">
-                            <li><a href="contacts-grid.html" data-key="t-user-grid">User Grid</a></li>
-                            <li><a href="contacts-list.html" data-key="t-user-list">User List</a></li>
-                            <li><a href="contacts-profile.html" data-key="t-user-profile">User Profile</a></li>
-                        </ul>
-                    </li>
-
+{{-- 
                     <li class="menu-title" data-key="t-pages">Pages</li>
         
                     <li>
@@ -100,7 +85,7 @@
                             <i class="bx bx-user-circle icon nav-icon"></i>
                             <span class="menu-item" data-key="t-vertical">Setting</span>
                         </a>
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
             <!-- Sidebar -->

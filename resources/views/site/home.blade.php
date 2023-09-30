@@ -166,9 +166,9 @@
                         <img class="img-fluid" src={{"site/img/atom.jpg"}} alt="">
                         <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                             <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                style="border-radius: 30px 0 0 30px;">Read More</a>
+                                style="border-radius: 30px 0 0 30px;">Selengkapnya</a>
                             <a href="{{ url('/register') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                style="border-radius: 0 30px 30px 0;">Daftar Sekarang</a>
                         </div>
                     </div>
                     <div class="text-center p-4 pb-0">
@@ -179,7 +179,7 @@
                             <small class="fa fa-star text-primary"></small>
                             <small>(53 Siswa)</small>
                         </div>
-                        <h6 class="mb-3">Teori Struktur dan Perkembangan Atom</h6>
+                        <h6 class="mb-3">Struktur Atom</h6>
                     </div>
                     <div class="d-flex border-top">
                         <small class="flex-fill text-center border-end py-2"><i
@@ -195,9 +195,9 @@
                         <img class="img-fluid" src={{"site/img/larutan.jpg"}} alt="">
                         <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                             <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                style="border-radius: 30px 0 0 30px;">Read More</a>
+                                style="border-radius: 30px 0 0 30px;">Selengkapnya</a>
                             <a href="{{ url('/register') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                style="border-radius: 0 30px 30px 0;">Daftar Sekarang</a>
                         </div>
                     </div>
                     <div class="text-center p-4 pb-0">
@@ -206,7 +206,7 @@
                             <small class="fa fa-star text-primary"></small>
                             <small>(23 Siswa)</small>
                         </div>
-                        <h6 class="mb-3">Larutan Elektrolit dan Non Elektrolit</h6>
+                        <h6 class="mb-3">Bentuk Molekul dan Gaya Antarmolekul</h6>
                     </div>
                     <div class="d-flex border-top">
                         <small class="flex-fill text-center border-end py-2"><i
@@ -222,9 +222,9 @@
                         <img class="img-fluid" src={{"site/img/logam.jpg"}} alt="">
                         <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
                             <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end"
-                                style="border-radius: 30px 0 0 30px;">Read More</a>
+                                style="border-radius: 30px 0 0 30px;">Selengkapnya</a>
                             <a href="{{ url('/register') }}" class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                style="border-radius: 0 30px 30px 0;">Join Now</a>
+                                style="border-radius: 0 30px 30px 0;">Daftar Sekarang</a>
                         </div>
                     </div>
                     <div class="text-center p-4 pb-0">
@@ -234,13 +234,13 @@
                             <small class="fa fa-star text-primary"></small>
                             <small>(30 Siswa)</small>
                         </div>
-                        <h6 class="mb-3">Logam Alkali & Alkali Tanah</h6>
+                        <h6 class="mb-3">Senyawa Turunan Alkana</h6>
                     </div>
                     <div class="d-flex border-top">
                         <small class="flex-fill text-center border-end py-2"><i
                                 class="fa fa-user-tie text-primary me-2"></i>Kelas 12</small>
                         <small class="flex-fill text-center py-2"><i
-                                class="fa fa-book text-primary me-2"></i>Kurikulum 2013</small>
+                                class="fa fa-book text-primary me-2"></i>Kurikulum Merdeka</small>
                     </div>
                 </div>
             </div>

@@ -20,11 +20,26 @@ class Materi extends Model
 
     public function kuis()
     {
-        return $this->hasMany(Kuis::class,'materi_id');
+        return $this->hasMany(Kuis::class, 'materi_id');
     }
 
     public function praktikum()
     {
-        return $this->hasMany(Praktikum::class,'materi_id');
+        return $this->hasMany(Praktikum::class, 'materi_id');
+    }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'tb_materi_user')->withPivot('skor');
+    }
+
+    public function praktikumid()
+    {
+        return $this->belongsTo(Praktikum::class, 'id');
+    }
+
+    public function kuisid()
+    {
+        return $this->belongsTo(Kuis::class, 'id');
     }
 }

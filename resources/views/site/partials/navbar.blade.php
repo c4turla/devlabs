@@ -1,7 +1,7 @@
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
     <a href="{{ url('/') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-        <img src={!! url('site/img/logo.png') !!} height="50" width="50">
+        <img src={!! url('site/img/logobaru.png') !!} height="50" >  
         <h1 class="m-0 text-primary"> DevLabs</h1>
     </a>
     <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">

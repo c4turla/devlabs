@@ -42,13 +42,9 @@
                         <li><i class="bx bx-polygon font-size-24"></i></li>
                     </ul>
                    <div class="main-wid position-relative">
-                        <h3 class="text-white">DevLabs Dashboard</h3>
-
                         <h3 class="text-white mb-0"> Selamat Datang, {{Auth::user()->name}}!</h3>
-
-                        <p class="text-white-50 px-4 mt-4">Silahkan pilih menu yang anda inginkan. Untuk edit profile klik menu dibawah ini.</p>
-                        
-                        <div class="mt-4 pt-2 mb-2">
+                        <p class="text-white-50 px-4 mt-4">Silahkan pilih menu yang anda inginkan. Untuk edit profile klik menu dibawah ini.</p>                        
+                        <div class="mt-4 pt-3 mb-2">
                             <a href="{{ route('profile') }}" class="btn btn-success">Lihat Profile <i class="mdi mdi-arrow-right ms-1"></i></a>
                         </div>
                    </div>
@@ -63,17 +59,17 @@
                     <div class="card-body">
                         <div class="avatar">
                             <span class="avatar-title bg-primary-subtle rounded">
-                                <i class="mdi mdi-account-outline text-primary font-size-24"></i>
+                                <i class="mdi mdi-account-group-outline text-primary font-size-24"></i>
                             </span>
                         </div>
                         <p class="text-muted mt-4 mb-0">Total Pengguna</p>
-                        <h4 class="mt-1 mb-0">3,89,658 <sup class="text-success fw-medium font-size-14"><i class="mdi mdi-arrow-down"></i> 10%</sup></h4>
+                        <h4 class="mt-1 mb-0">{{ $totalUsers }} <sup class="text-success fw-medium font-size-14"><i class="mdi mdi-arrow-up"></i> 10%</sup></h4>
                         <div>
                             <div class="py-3 my-1">
                                 <div id="mini-1" data-colors='["#3980c0"]'></div>
                             </div>
                             <ul class="list-inline d-flex justify-content-between justify-content-center mb-0">
-                                <li class="list-inline-item"><a href="" class="text-muted">Lihat Detail</a></li>
+                                <li class="list-inline-item"><a href="{{ route('admin.pengguna') }}" class="text-muted">Lihat Detail</a></li>
                             </ul>
                         </div>
                     </div>
@@ -88,17 +84,14 @@
                                 <i class="mdi mdi-eye-outline text-success font-size-24"></i>
                             </span>
                         </div>
-                        <p class="text-muted mt-4 mb-0">Today Visitor</p>
+                        <p class="text-muted mt-4 mb-0">Total Pengunjung</p>
                         <h4 class="mt-1 mb-0">1,648,29 <sup class="text-danger fw-medium font-size-14"><i class="mdi mdi-arrow-down"></i> 19%</sup></h4>
                         <div>
                             <div class="py-3 my-1">
                                 <div id="mini-2" data-colors='["#33a186"]'></div>
                             </div>
                             <ul class="list-inline d-flex justify-content-between justify-content-center mb-0">
-                                <li class="list-inline-item"><a href="" class="text-muted">Day</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Week</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Month</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Year</a></li>
+                                <li class="list-inline-item"><a href="" class="text-muted">Lihat Detail</a></li>
                             </ul>
                         </div>
                     </div>
@@ -110,20 +103,17 @@
                     <div class="card-body">
                         <div class="avatar">
                             <span class="avatar-title bg-primary-subtle rounded">
-                                <i class="mdi mdi-rocket-outline text-primary font-size-24"></i>
+                                <i class="mdi mdi-ballot-outline text-primary font-size-24"></i>
                             </span>
                         </div>
-                        <p class="text-muted mt-4 mb-0">Total Expense</p>
-                        <h4 class="mt-1 mb-0">6,48,249 <sup class="text-success fw-medium font-size-14"><i class="mdi mdi-arrow-down"></i> 22%</sup></h4>
+                        <p class="text-muted mt-4 mb-0">Total Materi</p>
+                        <h4 class="mt-1 mb-0">{{ $materis }} <sup class="text-success fw-medium font-size-14">Materi</sup></h4>
                         <div>
                             <div class="py-3 my-1">
                                 <div id="mini-3" data-colors='["#3980c0"]'></div>
                             </div>
                             <ul class="list-inline d-flex justify-content-between justify-content-center mb-0">
-                                <li class="list-inline-item"><a href="" class="text-muted">Day</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Week</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Month</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Year</a></li>
+                                <li class="list-inline-item"><a href="{{ route('admin.materi') }}" class="text-muted">Lihat Detail</a></li>
                             </ul>
                         </div>
                     </div>
@@ -135,20 +125,17 @@
                     <div class="card-body">
                         <div class="avatar">
                             <span class="avatar-title bg-success-subtle rounded">
-                                <i class="mdi mdi-account-multiple-outline text-success font-size-24"></i>
+                                <i class="mdi mdi-comment-bookmark-outline text-success font-size-24"></i>
                             </span>
                         </div>
-                        <p class="text-muted mt-4 mb-0">New Users</p>
-                        <h4 class="mt-1 mb-0">$5,265,3 <sup class="text-danger fw-medium font-size-14"><i class="mdi mdi-arrow-down"></i> 18%</sup></h4>
+                        <p class="text-muted mt-4 mb-0">Total Kuis</p>
+                        <h4 class="mt-1 mb-0">{{ $kuis }} <sup class="text-success fw-medium font-size-14">Soal</sup></h4>
                         <div>
                             <div class="py-3 my-1">
                                 <div id="mini-4" data-colors='["#33a186"]'></div>
                             </div>
                             <ul class="list-inline d-flex justify-content-between justify-content-center mb-0">
-                                <li class="list-inline-item"><a href="" class="text-muted">Day</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Week</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Month</a></li>
-                                <li class="list-inline-item"><a href="" class="text-muted">Year</a></li>
+                                <li class="list-inline-item"><a href="{{ route('admin.kuis') }}" class="text-muted">Lihat Detail</a></li>
                             </ul>
                         </div>
                     </div>
@@ -258,12 +245,12 @@
         <div class="card">
             <div class="card-header">
                 <div class="align-items-center d-flex">
-                    <h4 class="card-title mb-0 flex-grow-1">User Registrasi</h4>
+                    <h4 class="card-title mb-0 flex-grow-1">Pengguna Baru</h4>
                 </div>
             </div>
 
             <div class="card-body px-0 pt-2">
-                <div class="table-responsive px-3" data-simplebar style="max-height: 393px;">
+                <div class="table-responsive px-3" data-simplebar style="max-height: 360px;">
                     <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
                         <tbody>
                             @foreach ($topRecords as $record)
@@ -273,7 +260,7 @@
                                     <h6 class="font-size-15 mb-1">{{ $record->name }}</h6>
                                     <p class="text-muted font-size-13 mb-0"><i class="mdi mdi-email"></i> {{ $record->email }}</p>
                                 </td>
-                                <td><span class="badge text-success  bg-success-subtle font-size-12">{{ \Carbon\Carbon::parse($record->created_at)->format('j F Y') }}</span></td>
+                                <td><span class="badge text-success  bg-success-subtle font-size-12">{{ \Carbon\Carbon::parse($record->created_at)->format('j-m-Y') }}</span></td>
                                 <td>
                                     <div class="dropdown">
                                         <a class="text-muted dropdown-toggle font-size-20" role="button" data-bs-toggle="dropdown" aria-haspopup="true">

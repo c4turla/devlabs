@@ -9,7 +9,7 @@
     <meta content="DevLabs - Belajar Kimia Menjadi Lebih Mudah" name="description" />
     <meta content="Kendariweb" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{!! url('assets/images/favicon.ico') !!}">
+    <link rel="shortcut icon" href="{!! url('site/img/logobaru.png') !!}">
 
     <!-- Bootstrap Css -->
     <link href="{!! url('assets/css/bootstrap.min.css') !!}" id="bootstrap-style" rel="stylesheet" type="text/css" />

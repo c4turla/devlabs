@@ -8,11 +8,12 @@
         <div class="d-flex flex-column min-vh-100 px-3 pt-4">
             <div class="row justify-content-center my-auto">
                 <div class="col-md-8 col-lg-6 col-xl-5">
-                    <div class="card">
+                    <div class="card mb-3">
                         <div class="card-body p-4">
                             <div class="text-center mt-2">
                                 <h5 class="text-primary">Selamat Datang !</h5>
                                 <p class="text-muted">Sign in untuk lanjut ke DevLabs.</p>
+                                <img src="{!! url('assets/images/logobaru.png') !!}" height="120">
                                 @if(session('success'))
                                 <p class="alert alert-success">{{ session('success') }}</p>
                                 @endif
